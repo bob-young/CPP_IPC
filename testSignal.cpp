@@ -10,7 +10,7 @@ int g=0;
 void thread0(int signum){
     std::cout<<"signal :"<<signum<<std::endl;
     if(signum==SIGINT)
-    pthread_exit(NULL);
+    exit(SIGINT);
 }
 void thread1(){
     signal(SIGINT,thread0);
