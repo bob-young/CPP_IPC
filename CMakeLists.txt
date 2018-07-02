@@ -3,5 +3,5 @@ project(pipe)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
-set(SOURCE_FILES main.cpp testpipe.cpp testSignal.cpp)
+set(SOURCE_FILES main.cpp testpipe.cpp testSignal.cpp testmsgque.cpp)
 add_executable(pipe ${SOURCE_FILES})

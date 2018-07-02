@@ -13,7 +13,7 @@ void thread0(int signum){
     exit(SIGINT);
 }
 void thread1(){
-    signal(SIGINT,thread0);
+    signal(2,thread0);
     int i=3;
     while(i++) {
         sleep(10);
@@ -27,7 +27,7 @@ void thread2(){
     sleep(4);
     std::cout<<"thread 2 sleeping"<< g++<<std::endl;
     }
-    raise(SIGINT);
+    raise(2);
 }
 
 int testSig(){
