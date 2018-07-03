@@ -14,3 +14,5 @@ key = dname&FF00 0000 | stat.st_dev&00FF 0000 | stat.st_ino&0000 FFFF <br>
 <br>
 perm 是我们输入flag时产生的控制结构体，操作方式，权限控制等。要注意在创建时，IPC_CREAT|0666，0666是权限掩码，其原理同chmod<br>
 每个ipc_ids关联一个perm<br>
+每一个ipc用完一定要释放，否则会驻留在内存中<br>
+ipcs -a status 可查看所有ipc
