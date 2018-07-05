@@ -15,7 +15,8 @@ void thread31(){
         std::cout<<"error"<<std::endl;
     }
     std::cout<<"ok"<<std::endl;
-    sleep(5);
+    printf("%dsssss:%u\n",semid,semid);
+    sleep(50);
     sembuf *smb=(sembuf*)malloc(sizeof(struct sembuf));
     smb->sem_flg=0;//wait
     smb->sem_num=0;//the first sem in semid_ds

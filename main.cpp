@@ -1,5 +1,6 @@
 #include <iostream>
 #include <unistd.h>
+#include <sys/ipc.h>
 
 int testpipe();
 int testSig();
@@ -18,6 +19,8 @@ int main(int argc,char** argv){
         case 3:std::cout<<"test shm:\n";testShm();break;
         case 4:std::cout<<"test sem:\n";testSem();break;
     }
-
+//    const char* fp="/home/a.cpp";
+//    printf("sssss:%u\n",ftok(fp,0x99));
+//    sleep(30);
     return 0;
 }

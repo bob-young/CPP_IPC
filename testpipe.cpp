@@ -31,6 +31,7 @@ void son(int pw){
         close(pw);
         break;
     }
+    std::cout << "son exit...\n";
     exit(0);
 }
 

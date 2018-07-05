@@ -12,14 +12,14 @@
 #define PERM S_IRUSR|S_IWUSR|IPC_CREAT
 
 key_t key=100;
-int g_shmid=0;
+volatile int g_shmid=0;
 
 void thread21(){
     int shmid=shmget(key,1024,IPC_CREAT|0666);
     if(shmid==-1){
         std::cout<<"create error\n";
     }else{
-        g_shmid=shmid;
+
         std::cout<<"create ok key="<< key<<std::endl;
     }
 
@@ -29,6 +29,10 @@ void thread21(){
 
     memcpy(waddr,msg,12);
     std::cout<<"write ok\n";
+    printf("%dsssss:%u\n",shmid,shmid);
+
+    sleep(30);
+    g_shmid=shmid;
     pthread_exit(0);
 }
 
